@@ -50,7 +50,8 @@ class LinearRegression:
       self.epoch()
 
   def showOutput(self):
-    prediction = np.dot(self.x,self.theta)
+    theta = np.array([self.theta0, self.theta1])
+    prediction = np.dot(self.x,theta)
     plt.scatter(self.x,self.y,color='blue',label='original')
     plt.plot(self.x,prediction,color='red',label='prediction')
     plt.legend()
