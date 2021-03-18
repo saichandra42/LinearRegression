@@ -5,7 +5,7 @@ plt.style.use("seaborn")
 
 class LinearRegression:
   # class attribute
-  epochs = 1000
+  epochs = 8000
 
   def __init__(self,x,y):
     self.x = x
@@ -52,10 +52,18 @@ class LinearRegression:
     plt.legend()
     plt.show()
 
+  def showOutput(self):
+    prediction = np.dot(self.x,self.theta)
+    plt.scatter(self.x,self.y,color='blue',label='original')
+    plt.plot(self.x,prediction,color='red',label='prediction')
+    plt.legend()
+    plt.show()
+
 data = pd.read_csv('data.csv')
 
 lr1 = LinearRegression(data['Height'],data['Weight'])
 lr1.optimise()
+lr1.showOutput() 
 
 
 
