@@ -48,9 +48,6 @@ class LinearRegression:
   def optimise(self):
     for i in range(0,self.epochs):
       self.epoch()
-    plt.plot(self.loss_array,label='cost')
-    plt.legend()
-    plt.show()
 
   def showOutput(self):
     prediction = np.dot(self.x,self.theta)
